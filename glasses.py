@@ -36,8 +36,8 @@ def preprocess_glass(glass_img, red_channel, blue_channel, green_channel):
 def superimpose(person_img, glasses_img, red_channel, blue_channel, green_channel):
 
 	#Loading the face and eyes detection models.
-	face_cascade = cv2.CascadeClassifier("./haarcascade/haarcascade_frontalface_default.xml")
-	eyepair_cascade = cv2.CascadeClassifier("./haarcascade/haarcascade_mcs_eyepair_big.xml")
+	face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades+"haarcascade_frontalface_default.xml")
+	eyepair_cascade = cv2.CascadeClassifier(cv2.data.haarcascades+"haarcascade_mcs_eyepair_big.xml")
 
 	#processing the glasses to convert the background to transparent.
 	img_glasses = preprocess_glass(glasses_img, red_channel, blue_channel, green_channel)

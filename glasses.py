@@ -64,10 +64,10 @@ def superimpose(person_img, glasses_img, red_channel, blue_channel, green_channe
 		for (ex, ey, ew, eh) in eyepairs:
 
 			#calculating the boundaries for the glasses.
-			x1 = int(ex - ew / 10)-10
-			x2 = int((ex + ew) + ew / 10)+10
-			y1 = int(ey)-10
-			y2 = int(ey + eh + eh / 2)+10
+			x1 = int(ex - ew / 10)-20
+			x2 = int((ex + ew) + ew / 10)+20
+			y1 = int(ey)-25
+			y2 = int(ey + eh + eh / 2)+25
 
 			if x1 < 0 or x2 < 0 or x2 > w or y2 > h:
 				continue
@@ -124,11 +124,11 @@ if person_img_path != "":
 		st.image(glass_img, caption="Glasses Image", use_column_width=True)
 
 		#Using Sliders to give the threshold for the filters in RGB Channels
-		red_channel = st.slider('Red Channel Filter', 0, 255, 50)
+		red_channel = st.slider('Red Channel Filter', 0, 255, 255)
 		st.write("You selected", red_channel)
-		green_channel = st.slider('Green Channel Filter', 0, 255, 50)
+		green_channel = st.slider('Green Channel Filter', 0, 255, 255)
 		st.write("You selected", green_channel)
-		blue_channel = st.slider('Blue Filter Channel', 0, 255, 50)
+		blue_channel = st.slider('Blue Filter Channel', 0, 255, 255)
 		st.write("You selected", blue_channel)
 
 		#Run Button to run the program after giving the parameters.
